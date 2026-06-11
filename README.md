@@ -91,3 +91,5 @@ Sistem Informasi Manajemen Inventori (SIM-Inventori) berbasis web yang dirancang
    php artisan serve
    ```
    Aplikasi dapat diakses di browser melalui link `http://127.0.0.1:8000`.
+
+test update
