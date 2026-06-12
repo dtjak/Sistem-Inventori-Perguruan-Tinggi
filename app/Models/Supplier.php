@@ -47,4 +47,11 @@ class Supplier extends Model
         };
         return '<span class="badge bg-' . $class . '">' . number_format($rating, 1) . ' ★</span>';
     }
+
+    public static function generateKode(): string
+    {
+        $last = self::withTrashed()->orderBy('id', 'desc')->first();
+        $num = $last ? ((int) substr($last->kode_supplier, 4)) + 1 : 1;
+        return 'SUP-' . str_pad($num, 3, '0', STR_PAD_LEFT);
+    }
 }

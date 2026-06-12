@@ -83,6 +83,15 @@ class UserSeeder extends Seeder
                 'status' => 'aktif',
                 'role' => 'supplier',
             ],
+            [
+                'name' => 'CV Berkah Abadi Supplier',
+                'nip' => null,
+                'unit' => null,
+                'email' => 'info@berkababadi.com',
+                'password' => Hash::make('password'),
+                'status' => 'aktif',
+                'role' => 'supplier',
+            ],
         ];
 
         foreach ($users as $userData) {

@@ -63,7 +63,7 @@ class RolePermissionSeeder extends Seeder
         $staffInventori->syncPermissions([
             'barang.view', 'barang.create', 'barang.edit', 'barang.delete', 'barang.import', 'barang.export',
             'aset.view', 'aset.create', 'aset.edit', 'aset.delete', 'aset.export',
-            'supplier.view', 'supplier.create', 'supplier.edit', 'supplier.delete',
+            'supplier.view',
             'sr.view',
             'dr.view', 'dr.create', 'dr.edit', 'dr.delete',
             'pr.view', 'pr.create', 'pr.edit', 'pr.delete',
@@ -108,7 +108,7 @@ class RolePermissionSeeder extends Seeder
         $staffPurchasing->syncPermissions([
             'pr.view',
             'po.view', 'po.create', 'po.edit', 'po.delete',
-            'supplier.view', 'supplier.create', 'supplier.edit',
+            'supplier.view',
         ]);
 
         // 6. Head Purchasing
@@ -131,6 +131,8 @@ class RolePermissionSeeder extends Seeder
         $supplier->syncPermissions([
             'po.view',
             'retur.view',
+            'supplier.view',
+            'supplier.edit',
         ]);
 
         $this->command->info('Roles and permissions seeded successfully.');
