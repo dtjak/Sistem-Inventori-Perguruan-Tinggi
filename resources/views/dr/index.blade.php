@@ -30,6 +30,7 @@
                     <option value="draft" {{ request('status') === 'draft' ? 'selected' : '' }}>Draft</option>
                     <option value="menunggu_approval" {{ request('status') === 'menunggu_approval' ? 'selected' : '' }}>Menunggu Approval</option>
                     <option value="approved" {{ request('status') === 'approved' ? 'selected' : '' }}>Approved (Distribusi)</option>
+                    <option value="dikirim" {{ request('status') === 'dikirim' ? 'selected' : '' }}>Sedang Dikirim</option>
                     <option value="selesai" {{ request('status') === 'selesai' ? 'selected' : '' }}>Selesai</option>
                     <option value="ditolak" {{ request('status') === 'ditolak' ? 'selected' : '' }}>Ditolak</option>
                 </select>
@@ -74,17 +75,7 @@
                         <td>{{ $dr->tanggal->format('d M Y') }}</td>
                         <td>{{ $dr->dibuatOleh->name ?? '-' }}</td>
                         <td>
-                            @if($dr->status === 'draft')
-                                <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle px-2 py-1">Draft</span>
-                            @elseif($dr->status === 'menunggu_approval')
-                                <span class="badge bg-warning-subtle text-warning border border-warning-subtle px-2 py-1">Menunggu Approval</span>
-                            @elseif($dr->status === 'approved')
-                                <span class="badge bg-info-subtle text-info border border-info-subtle px-2 py-1">Approved</span>
-                            @elseif($dr->status === 'selesai')
-                                <span class="badge bg-success-subtle text-success border border-success-subtle px-2 py-1">Selesai</span>
-                            @else
-                                <span class="badge bg-danger-subtle text-danger border border-danger-subtle px-2 py-1">Ditolak</span>
-                            @endif
+                            {!! $dr->status_badge !!}
                         </td>
                         <td class="text-end pe-4">
                             <div class="btn-group btn-group-sm">

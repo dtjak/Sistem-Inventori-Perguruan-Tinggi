@@ -83,6 +83,11 @@ class DeliveryRequisitionService
         $dr->dibuatOleh->notify(new ApprovalRejectedNotification($dr, 'Delivery Requisition', $alasan));
     }
 
+    public function kirim(DeliveryRequisition $dr): void
+    {
+        $dr->update(['status' => 'dikirim']);
+    }
+
     public function selesai(DeliveryRequisition $dr): void
     {
         $dr->update(['status' => 'selesai']);

@@ -172,6 +172,12 @@
 @push('scripts')
 <script>
 const ctx = document.getElementById('stokChart').getContext('2d');
+
+// Create gradient for bars
+const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+gradient.addColorStop(0, 'rgba(0, 40, 142, 0.9)');
+gradient.addColorStop(1, 'rgba(26, 79, 196, 0.5)');
+
 new Chart(ctx, {
     type: 'bar',
     data: {
@@ -179,18 +185,26 @@ new Chart(ctx, {
         datasets: [{
             label: 'Stok Saat Ini',
             data: {!! json_encode($barangChart->pluck('stok_saat_ini')) !!},
-            backgroundColor: 'rgba(78, 115, 223, 0.8)',
-            borderColor: 'rgba(78, 115, 223, 1)',
+            backgroundColor: gradient,
+            borderColor: 'rgba(0, 40, 142, 1)',
             borderWidth: 1,
-            borderRadius: 6,
+            borderRadius: 8,
+            borderSkipped: false,
         }]
     },
     options: {
         responsive: true,
         plugins: { legend: { display: false } },
         scales: {
-            y: { beginAtZero: true, grid: { color: 'rgba(0,0,0,0.05)' } },
-            x: { grid: { display: false } }
+            y: {
+                beginAtZero: true,
+                grid: { color: 'rgba(0,40,142,0.06)' },
+                ticks: { color: '#6b7280', font: { size: 11 } }
+            },
+            x: {
+                grid: { display: false },
+                ticks: { color: '#6b7280', font: { size: 11 } }
+            }
         }
     }
 });

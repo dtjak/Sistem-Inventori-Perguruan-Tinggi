@@ -6,21 +6,21 @@
     <style>
         * { font-family: 'DejaVu Sans', sans-serif; font-size: 11px; }
         body { margin: 20px; color: #333; }
-        .header { border-bottom: 3px solid #4e73df; padding-bottom: 10px; margin-bottom: 20px; }
-        .company-name { font-size: 18px; font-weight: bold; color: #4e73df; }
+        .header { border-bottom: 3px solid #00288E; padding-bottom: 10px; margin-bottom: 20px; }
+        .company-name { font-size: 18px; font-weight: bold; color: #00288E; }
         .doc-title { font-size: 14px; font-weight: bold; margin-top: 5px; }
         .info-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
         .info-table td { padding: 4px 8px; }
         .info-table .label { font-weight: bold; width: 30%; color: #666; }
         table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
-        th { background-color: #4e73df; color: white; padding: 8px; text-align: left; }
+        th { background-color: #00288E; color: white; padding: 8px; text-align: left; }
         td { padding: 6px 8px; border-bottom: 1px solid #eee; }
         tr:nth-child(even) { background: #f9f9ff; }
         .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: bold; }
         .badge-warning { background: #f6c23e; color: #333; }
         .badge-success { background: #1cc88a; color: white; }
         .badge-danger { background: #e74a3b; color: white; }
-        .badge-secondary { background: #858796; color: white; }
+        .badge-secondary { background: #6b7280; color: white; }
         .badge-info { background: #36b9cc; color: white; }
         .signature-area { margin-top: 40px; }
         .signature-box { display: inline-block; width: 200px; text-align: center; }
@@ -64,7 +64,7 @@
         @endif
     </table>
 
-    <h4 style="color:#4e73df; border-bottom:1px solid #4e73df; padding-bottom:5px;">Detail Permohonan (Barang / Aset)</h4>
+    <h4 style="color:#00288E; border-bottom:1px solid #00288E; padding-bottom:5px;">Detail Permohonan (Barang / Aset)</h4>
 
     <table>
         <thead>

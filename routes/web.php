@@ -93,6 +93,7 @@ Route::middleware(['auth', 'log.activity'])->group(function () {
         Route::post('/{dr}/submit', [DeliveryRequisitionController::class, 'submit'])->name('submit');
         Route::post('/{dr}/approve', [DeliveryRequisitionController::class, 'approve'])->name('approve');
         Route::post('/{dr}/reject', [DeliveryRequisitionController::class, 'reject'])->name('reject');
+        Route::post('/{dr}/kirim', [DeliveryRequisitionController::class, 'kirim'])->name('kirim');
         Route::post('/{dr}/selesai', [DeliveryRequisitionController::class, 'selesai'])->name('selesai');
         Route::get('/{dr}/cetak', [DeliveryRequisitionController::class, 'cetak'])->name('cetak');
     });

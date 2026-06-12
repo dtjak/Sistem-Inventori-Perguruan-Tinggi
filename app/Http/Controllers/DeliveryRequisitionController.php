@@ -111,8 +111,23 @@ class DeliveryRequisitionController extends Controller
         return redirect()->route('dr.show', $dr->id)->with('success', "DR berhasil ditolak.");
     }
 
+    public function kirim(DeliveryRequisition $dr)
+    {
+        abort_if(!auth()->user()->can('dr.create'), 403, 'Anda tidak memiliki akses.');
+        abort_if($dr->status !== 'approved', 403, 'DR harus disetujui terlebih dahulu.');
+
+        $this->service->kirim($dr);
+        return redirect()->route('dr.show', $dr->id)->with('success', "Barang sedang dikirim.");
+    }
+
     public function selesai(DeliveryRequisition $dr)
     {
+        abort_if($dr->status !== 'dikirim', 403, 'DR belum dikirim.');
+
+        $isPemohon = auth()->id() === $dr->storeRequisition->pemohon_id;
+        $isStaffInventori = auth()->user()->can('dr.create');
+        abort_if(!$isPemohon && !$isStaffInventori, 403, 'Hanya pemohon unit atau staff inventori yang dapat menyelesaikan DR ini.');
+
         $this->service->selesai($dr);
         return redirect()->route('dr.show', $dr->id)->with('success', "DR ditandai selesai.");
     }

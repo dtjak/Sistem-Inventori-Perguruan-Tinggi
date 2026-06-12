@@ -31,19 +31,7 @@
                             </tr>
                             <tr>
                                 <th class="text-muted">Status</th>
-                                <td>: 
-                                    @if($dr->status === 'draft')
-                                        <span class="badge bg-secondary-subtle text-secondary border px-2 py-1">Draft</span>
-                                    @elseif($dr->status === 'menunggu_approval')
-                                        <span class="badge bg-warning-subtle text-warning border px-2 py-1">Menunggu Approval</span>
-                                    @elseif($dr->status === 'approved')
-                                        <span class="badge bg-info-subtle text-info border px-2 py-1">Approved</span>
-                                    @elseif($dr->status === 'selesai')
-                                        <span class="badge bg-success-subtle text-success border px-2 py-1">Selesai</span>
-                                    @else
-                                        <span class="badge bg-danger-subtle text-danger border px-2 py-1">Ditolak</span>
-                                    @endif
-                                </td>
+                                <td>: {!! $dr->status_badge !!}</td>
                             </tr>
                             <tr>
                                 <th class="text-muted">Merujuk ke SR</th>
@@ -155,13 +143,24 @@
 
                     @if($dr->status === 'approved')
                         @can('dr.create')
-                            <form action="{{ route('dr.selesai', $dr->id) }}" method="POST">
+                            <form action="{{ route('dr.kirim', $dr->id) }}" method="POST" class="d-inline">
                                 @csrf
                                 <button type="submit" class="btn btn-primary">
-                                    <i class="bi bi-check-all me-1"></i>Tandai Selesai / Diterima
+                                    <i class="bi bi-truck me-1"></i>Siapkan & Kirim Barang
                                 </button>
                             </form>
                         @endcan
+                    @endif
+
+                    @if($dr->status === 'dikirim')
+                        @if(auth()->id() === ($dr->storeRequisition->pemohon_id ?? null) || auth()->user()->can('dr.create'))
+                            <form action="{{ route('dr.selesai', $dr->id) }}" method="POST" class="d-inline">
+                                @csrf
+                                <button type="submit" class="btn btn-success">
+                                    <i class="bi bi-check-circle me-1"></i>Tandai Selesai / Diterima
+                                </button>
+                            </form>
+                        @endif
                     @endif
                 </div>
             </div>

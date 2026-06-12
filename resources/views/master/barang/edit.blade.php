@@ -106,8 +106,8 @@
                     showCancelButton: true,
                     confirmButtonText: 'Tambah',
                     cancelButtonText: 'Batal',
-                    confirmButtonColor: '#4e73df',
-                    cancelButtonColor: '#858796',
+                    confirmButtonColor: '#00288E',
+                    cancelButtonColor: '#6b7280',
                     inputValidator: (value) => {
                         if (!value || value.trim() === '') {
                             return 'Nama kategori tidak boleh kosong!';
@@ -153,8 +153,8 @@
                     showCancelButton: true,
                     confirmButtonText: 'Tambah',
                     cancelButtonText: 'Batal',
-                    confirmButtonColor: '#4e73df',
-                    cancelButtonColor: '#858796',
+                    confirmButtonColor: '#00288E',
+                    cancelButtonColor: '#6b7280',
                     inputValidator: (value) => {
                         if (!value || value.trim() === '') {
                             return 'Nama satuan tidak boleh kosong!';

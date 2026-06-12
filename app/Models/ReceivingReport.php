@@ -48,10 +48,10 @@ class ReceivingReport extends Model
     public function getStatusBadgeAttribute(): string
     {
         return match ($this->status) {
-            'draft' => '<span class="badge bg-secondary">Draft</span>',
-            'menunggu_approval' => '<span class="badge bg-warning text-dark">Menunggu Approval</span>',
-            'approved' => '<span class="badge bg-success">Approved</span>',
-            'ditolak' => '<span class="badge bg-danger">Ditolak</span>',
+            'draft' => '<span class="badge bg-secondary"><i class="bi bi-pencil-square me-1"></i>Draft</span>',
+            'menunggu_approval' => '<span class="badge bg-warning text-dark"><i class="bi bi-hourglass-split me-1"></i>Menunggu Approval Head Inventori</span>',
+            'approved' => '<span class="badge bg-success"><i class="bi bi-check-circle me-1"></i>Disetujui Head Inventori</span>',
+            'ditolak' => '<span class="badge bg-danger"><i class="bi bi-x-circle me-1"></i>Ditolak Head Inventori</span>',
             default => '<span class="badge bg-secondary">-</span>',
         };
     }

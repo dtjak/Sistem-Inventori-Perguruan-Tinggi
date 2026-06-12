@@ -6,10 +6,10 @@
     <style>
         * { font-family: 'DejaVu Sans', sans-serif; font-size: 10px; }
         body { margin: 15px; }
-        .header { text-align: center; border-bottom: 2px solid #4e73df; margin-bottom: 15px; padding-bottom: 10px; }
-        .header h2 { color: #4e73df; margin: 0; font-size: 16px; }
+        .header { text-align: center; border-bottom: 2px solid #00288E; margin-bottom: 15px; padding-bottom: 10px; }
+        .header h2 { color: #00288E; margin: 0; font-size: 16px; }
         table { width: 100%; border-collapse: collapse; }
-        th { background: #4e73df; color: white; padding: 6px 8px; text-align: left; }
+        th { background: #00288E; color: white; padding: 6px 8px; text-align: left; }
         td { padding: 5px 8px; border-bottom: 1px solid #eee; }
         tr:nth-child(even) { background: #f8f9ff; }
         .text-center { text-align: center; }

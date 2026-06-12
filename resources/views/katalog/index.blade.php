@@ -165,7 +165,7 @@
     color: #212529 !important;
 }
 #katalogTab .nav-link.active {
-    background: linear-gradient(135deg, var(--accent) 0%, #5a85f5 100%) !important;
+    background: linear-gradient(135deg, var(--accent) 0%, #1a4fc4 100%) !important;
     border-color: transparent !important;
     color: white !important;
 }
